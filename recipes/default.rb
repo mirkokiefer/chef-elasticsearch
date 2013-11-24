@@ -33,8 +33,8 @@ when "debian", "ubuntu"
     path = File.join(tmp, deb)
 
     remote_file(path) do
-      owner  node.travis_build_environment.user
-      group  node.travis_build_environment.group
+      owner  "root"
+      group  "root"
       source "http://download.elasticsearch.org/elasticsearch/elasticsearch/#{deb}"
 
       not_if "which elasticsearch"
